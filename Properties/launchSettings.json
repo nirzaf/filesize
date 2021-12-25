@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "filesize": {
+      "commandName": "Project",
+      "commandLineArgs": "-nobuff c:\\Users\\lowle\\Downloads\\arch.iso"
+    }
+  }
+}
