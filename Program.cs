@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace downloader
@@ -27,11 +25,11 @@ namespace downloader
 
             if (fileName == null)
             {
-                Console.WriteLine("Usage: filesize [option] <path>");
+                Console.WriteLine("Usage: file size [option] <path>");
                 return;
             }
 
-            using var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, options);
+            await using var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, options);
 
             var buffer = new byte[4096];
             int size = 0, read = 0;
